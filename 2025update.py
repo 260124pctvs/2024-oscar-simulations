@@ -58,21 +58,21 @@ for x in tqdm(range(2500)):
       elif vote < con:
         rank.append(conclave[0])
         conclave[1] = 0
-      elif vote < emi:
-        rank.append(emilia_perez[0])
-        emilia_perez[1] = 0
       elif vote < dun:
         rank.append(dune_part_two[0])
         dune_part_two[1] = 0
+      elif vote < emi:
+        rank.append(emilia_perez[0])
+        emilia_perez[1] = 0
       elif vote < ish:
         rank.append(im_still_here[0])
         im_still_here[1] = 0
-      elif vote < sub:
-        rank.append(the_substance[0])
-        the_substance[1] = 0
       elif vote < nic:
         rank.append(nickel_boys[0])
         nickel_boys[1] = 0
+      elif vote < sub:
+        rank.append(the_substance[0])
+        the_substance[1] = 0
       elif vote < wic:
         rank.append(wicked[0])
         wicked[1] = 0
