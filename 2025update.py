@@ -3,7 +3,7 @@ from tqdm import tqdm
 from math import log
 winners = []
 top_choices = []
-for x in tqdm(range(10000)):
+for x in tqdm(range(2500)):
 
   #simulate academy
   academy = range(1,9500)
@@ -36,8 +36,8 @@ for x in tqdm(range(10000)):
       floor = dun
       emi = floor + emilia_perez[1]
       floor = emi
-      opp = floor + im_still_here[1]
-      floor = opp
+      ish = floor + im_still_here[1]
+      floor = ish
       nic = floor + nickel_boys[1]
       floor = nic
       sub = floor + the_substance[1]
@@ -61,7 +61,10 @@ for x in tqdm(range(10000)):
       elif vote < emi:
         rank.append(emilia_perez[0])
         emilia_perez[1] = 0
-      elif vote < opp:
+      elif vote < dun:
+        rank.append(dune_part_two[0])
+        dune_part_two[1] = 0
+      elif vote < ish:
         rank.append(im_still_here[0])
         im_still_here[1] = 0
       elif vote < sub:
@@ -93,7 +96,7 @@ for x in tqdm(range(10000)):
     concount = 0
     duncount = 0
     emicount = 0
-    oppcount = 0
+    ishcount = 0
     subcount = 0
     niccount = 0
     wiccount = 0
@@ -113,15 +116,15 @@ for x in tqdm(range(10000)):
         elif j[0] == "Emilia Perez":
           emicount = emicount + 1
         elif j[0] == "I'm Still Here":
-          oppcount = oppcount + 1
+          ishcount = ishcount + 1
         elif j[0] == "The Substance":
           subcount = subcount + 1
         elif j[0] == "Nickel Boys":
           niccount = niccount + 1
         elif j[0] == "Wicked":
           wiccount = wiccount + 1
-    maximum = max(anocount,acucount,brucount,concount,duncount,emicount,oppcount,subcount,niccount,wiccount)
-    list_movies = [anocount,acucount,brucount,concount,duncount,emicount,oppcount,subcount,niccount,wiccount]
+    maximum = max(anocount,acucount,brucount,concount,duncount,emicount,ishcount,subcount,niccount,wiccount)
+    list_movies = [anocount,acucount,brucount,concount,duncount,emicount,ishcount,subcount,niccount,wiccount]
     for i in eliminated:
       if i == "Anora":
         list_movies[0] = 200000
@@ -160,7 +163,7 @@ for x in tqdm(range(10000)):
         winners.append("Dune: Part Two")
       elif emicount == maximum:
         winners.append("Emilia Perez")
-      elif oppcount == maximum:
+      elif ishcount == maximum:
         winners.append("I'm Still Here")
       elif subcount == maximum:
         winners.append("The Substance")
@@ -188,7 +191,7 @@ for x in tqdm(range(10000)):
       elif emicount == minimum:
         eliminate = "Emilia Perez"
         eliminated.append(eliminate)
-      elif oppcount == minimum:
+      elif ishcount == minimum:
         eliminate = "I'm Still Here"
         eliminated.append(eliminate)
       elif subcount == minimum:
@@ -219,13 +222,13 @@ print("Wicked " + str(winners.count("Wicked")))
 
 
 print("first choices")
-print("Anora " + str(top_choices.count("Anora")/950000.0)+"%")
-print("A Complete Unknown " + str(top_choices.count("A Complete Unknown")/950000.0)+"%")
-print("The Brutalist " + str(top_choices.count("The Brutalist")/950000.0)+"%")
-print("Conclave " + str(top_choices.count("Conclave")/950000.0)+"%")
-print("Dune: Part Two " + str(top_choices.count("Dune: Part Two")/950000.0)+"%")
-print("Emilia Perez " + str(top_choices.count("Emilia Perez")/950000.0)+"%")
-print("I'm Still Here " + str(top_choices.count("I'm Still Here")/950000.0)+"%")
-print("The Substance " + str(top_choices.count("The Substance")/950000.0)+"%")
-print("Nickel Boys " + str(top_choices.count("Nickel Boys")/950000.0)+"%")
-print("Wicked " + str(top_choices.count("Wicked")/950000.0)+"%")
+print("Anora " + str(top_choices.count("Anora")/237500.0)+"%")
+print("A Complete Unknown " + str(top_choices.count("A Complete Unknown")/237500.0)+"%")
+print("The Brutalist " + str(top_choices.count("The Brutalist")/237500.0)+"%")
+print("Conclave " + str(top_choices.count("Conclave")/237500.0)+"%")
+print("Dune: Part Two " + str(top_choices.count("Dune: Part Two")/237500.0)+"%")
+print("Emilia Perez " + str(top_choices.count("Emilia Perez")/237500.0)+"%")
+print("I'm Still Here " + str(top_choices.count("I'm Still Here")/237500.0)+"%")
+print("The Substance " + str(top_choices.count("The Substance")/237500.0)+"%")
+print("Nickel Boys " + str(top_choices.count("Nickel Boys")/237500.0)+"%")
+print("Wicked " + str(top_choices.count("Wicked")/237500.0)+"%")
